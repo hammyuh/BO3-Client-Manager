@@ -8,7 +8,7 @@ A simple launcher and client manager for Call of Duty: Black Ops III.
 
 T7 Hub lets you switch between BO3 clients without manually moving files around.
 
-##DISCLAIMER
+## DISCLAIMER
 This should be obvious but in case it isn't, use the manual Windows / Linux install version of T7 Patch instead of the Windows exclusive version.
 RIP Alyssa / shiversoftdev 
 ## Download
