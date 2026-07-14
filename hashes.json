@@ -1,0 +1,31 @@
+{
+  "blackops3": {
+    "old": [
+      "66B95EB4667BD5B3B3D230E7BED1D29CCD261D48CA2699F01216C863BE24FF44"
+    ],
+    "new": [
+      "9BA98DBA41E18EF47DE6C63937340F8EAE7CB251F8FBC2E78D70047B64AA15B5"
+    ]
+  },
+
+  "clients": {
+  "Stock BO3": {
+    "requiresOldExe": false
+  },
+  "Ezz BOIII": {
+    "requiresOldExe": true
+  },
+  "T7 Patch": {
+    "requiresOldExe": false
+  },
+  "BOIII Community": {
+    "requiresOldExe": false
+  },
+  "T7x": {
+    "requiresOldExe": false
+  },
+  "CleanOps T7": {
+    "requiresOldExe": false
+  }
+ }
+}
