@@ -1,6 +1,6 @@
 ## AI Assistance Disclaimer
 
-This project was developed with AI assistance. AI contributed code suggestions, debugging help, and development guidance, but all design decisions, testing,final integration, (and most of the code lol) were handled by me.
+This project was developed with AI assistance. AI contributed code suggestions, debugging help, and development guidance, but all design decisions, testing, final integration, (and most of the code lol) were handled by me.
 
 # T7 Hub
 
