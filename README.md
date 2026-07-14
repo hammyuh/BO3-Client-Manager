@@ -25,7 +25,7 @@ T7 Hub does not include third-party clients. You must download them separately a
 Download:
 [Releases](https://github.com/hammyuh/T7Hub/releases/latest)
 
-## Supported Clients
+## Supported Profiles
 
 - Stock BO3
 - T7 Patch
@@ -40,7 +40,6 @@ Download:
 - Automatic client detection
 - Automatic BO3 installation detection
 - Client file management
-- Simple WPF interface
 
 ## Notes
 
@@ -54,7 +53,3 @@ Built with:
 - C#
 - WPF
 - .NET 10
-
-## License
-
-ion care bru do whatever
