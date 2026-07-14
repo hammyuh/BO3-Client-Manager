@@ -12,7 +12,7 @@ namespace T7_Hub
         );
 
         private const string HashUrl =
-            "https://raw.githubusercontent.com/hammyuh/T7Hub/main/hashes.json";
+            "https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json";
 
 
         public static async Task UpdateHashes()

@@ -71,12 +71,11 @@
 
 
                 <TextBlock
-                    Text="Installed clients:"
+                    Text="Required Files:"
                     Foreground="White"
                     FontSize="18"
                     FontWeight="Bold"
-                    Margin="0,20,0,10"
-                    x:Name="ClientStatusList"/>
+                    Margin="0,20,0,10"/>
 
 
                 <Border
@@ -87,7 +86,7 @@
                     <UniformGrid
                         x:Name="ClientList"
                         Columns="3"
-                        Rows="2"/>
+                        Rows="3"/>
 
                 </Border>
 
@@ -96,6 +95,7 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     Margin="0,25,0,0">
+
 
                     <Button
                         x:Name="OpenFolderButton"
@@ -113,6 +113,7 @@
                         Margin="5"
                         Content="Continue"
                         Click="ContinueButton_Click"/>
+
 
                 </StackPanel>
 

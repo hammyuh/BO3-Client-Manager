@@ -30,7 +30,7 @@ namespace T7_Hub
                 "BOIII Community",
                 new[]
                 {
-                    "boiii.exe"   
+                    "boiii.exe"
                 }
             },
 
@@ -49,8 +49,7 @@ namespace T7_Hub
                 "Ezz BOIII",
                 new[]
                 {
-                    "boiii.exe",
-                    
+                    "boiii.exe"
                 }
             },
 
@@ -69,7 +68,6 @@ namespace T7_Hub
                     "t7x.exe"
                 }
             }
-             
         };
 
 
@@ -110,7 +108,32 @@ namespace T7_Hub
                     return false;
             }
 
+
             return true;
+        }
+
+
+        public static bool CheckStockBO3()
+        {
+            string path = Path.Combine(
+                standbyPath,
+                "Stock BO3",
+                "BlackOps3.exe"
+            );
+
+            return File.Exists(path);
+        }
+
+
+        public static bool CheckOldExe()
+        {
+            string path = Path.Combine(
+                standbyPath,
+                "Old BO3 Exe",
+                "BlackOps3.exe"
+            );
+
+            return File.Exists(path);
         }
 
 
@@ -124,6 +147,7 @@ namespace T7_Hub
                 RestoreClient(config.appliedClient, gamePath);
             }
 
+
             if (RequiresOldExe(client))
             {
                 ExeManager.UseOldExe(gamePath);
@@ -132,6 +156,7 @@ namespace T7_Hub
             {
                 ExeManager.UseNewExe(gamePath);
             }
+
 
             if (client == "Stock BO3")
             {
@@ -152,7 +177,10 @@ namespace T7_Hub
                 string source = Path.Combine(clientPath, file);
                 string destination = Path.Combine(gamePath, file);
 
-                File.Copy(source, destination, true);
+                if (File.Exists(source))
+                {
+                    File.Copy(source, destination, true);
+                }
             }
 
 
@@ -179,40 +207,6 @@ namespace T7_Hub
         }
 
 
-        public static void CopyOldExe(string gamePath)
-        {
-            if (string.IsNullOrWhiteSpace(gamePath))
-                return;
-
-
-            string source = Path.Combine(
-                standbyPath,
-                "Old BO3 Exe",
-                "BlackOps3.exe"
-            );
-
-
-            string destination = Path.Combine(
-                gamePath,
-                "BlackOps3.exe"
-            );
-
-
-            if (File.Exists(source))
-            {
-                File.Copy(source, destination, true);
-            }
-        }
-        public static bool CheckStockBO3()
-        {
-            string path = Path.Combine(
-                standbyPath,
-                "Stock BO3",
-                "BlackOps3.exe"
-            );
-
-            return File.Exists(path);
-        }
         public static bool RequiresOldExe(string client)
         {
             string? json = HashUpdater.GetHashes();
@@ -220,22 +214,33 @@ namespace T7_Hub
             if (json == null)
                 return false;
 
+
             using JsonDocument doc = JsonDocument.Parse(json);
+
 
             if (!doc.RootElement.TryGetProperty("clients", out JsonElement clients))
                 return false;
 
+
             if (!clients.TryGetProperty(client, out JsonElement data))
                 return false;
 
-            return data.GetProperty("requiresOldExe").GetBoolean();
+
+            if (!data.TryGetProperty("requiresOldExe", out JsonElement requiresOldExe))
+                return false;
+
+
+            return requiresOldExe.GetBoolean();
         }
+
+
         public static string DetectAppliedClient(string gamePath)
         {
             foreach (string client in Clients)
             {
                 if (client == "Stock BO3" || client == "Old BO3 Exe")
                     continue;
+
 
                 if (IsClientApplied(client, gamePath))
                     return client;
@@ -247,11 +252,15 @@ namespace T7_Hub
                 "BlackOps3.exe"
             );
 
+
             if (ExeChecker.CheckBO3(exePath) == "New")
                 return "Stock BO3";
 
+
             return "Unknown";
         }
+
+
         public static bool IsClientApplied(string client, string gamePath)
         {
             if (!RequiredFiles.ContainsKey(client))
@@ -265,7 +274,23 @@ namespace T7_Hub
             }
 
 
-            return true;
+            string exePath = Path.Combine(
+                gamePath,
+                "BlackOps3.exe"
+            );
+
+
+            if (!File.Exists(exePath))
+                return false;
+
+
+            if (RequiresOldExe(client))
+            {
+                return ExeChecker.CheckBO3(exePath) == "Old";
+            }
+
+
+            return ExeChecker.CheckBO3(exePath) == "New";
         }
     }
 }

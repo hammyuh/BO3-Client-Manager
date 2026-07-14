@@ -67,34 +67,42 @@ namespace T7_Hub
         {
             ClientList.Children.Clear();
 
-            string[] clients =
+            string[] items =
             {
+                "Stock BO3 Exe",
+                "Old BO3 Exe",
                 "T7 Patch",
                 "BOIII Community",
                 "Ezz BOIII",
                 "T7x",
-                "CleanOps T7",
-                "Stock BO3"
+                "CleanOps T7"
             };
 
 
-            foreach (string client in clients)
+            foreach (string item in items)
             {
                 bool installed;
 
-                if (client == "Stock BO3")
+
+                switch (item)
                 {
-                    installed = FileManager.CheckStockBO3();
-                }
-                else
-                {
-                    installed = FileManager.CheckClient(client);
+                    case "Stock BO3 Exe":
+                        installed = FileManager.CheckStockBO3();
+                        break;
+
+                    case "Old BO3 Exe":
+                        installed = FileManager.CheckOldExe();
+                        break;
+
+                    default:
+                        installed = FileManager.CheckClient(item);
+                        break;
                 }
 
 
                 TextBlock text = new TextBlock
                 {
-                    Text = installed ? $"✓ {client}" : $"✗ {client}",
+                    Text = installed ? $"✓ {item}" : $"✗ {item}",
                     Foreground = installed ? Brushes.LimeGreen : Brushes.Gray,
                     FontSize = 14,
                     HorizontalAlignment = HorizontalAlignment.Center,
@@ -178,6 +186,26 @@ namespace T7_Hub
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!FileManager.CheckStockBO3())
+            {
+                MessageBox.Show(
+                    "Missing Stock BO3 executable.\n\nPlease add BlackOps3.exe to the Stock BO3 folder inside T7 Hub Standby."
+                );
+
+                return;
+            }
+
+
+            if (FileManager.CheckClient("Ezz BOIII") && !FileManager.CheckOldExe())
+            {
+                MessageBox.Show(
+                    "Ezz BOIII requires the old BO3 executable.\n\nPlease add it to the Old BO3 Exe folder inside T7 Hub Standby."
+                );
+
+                return;
+            }
+
+
             config.HasCompletedSetup = true;
 
             ConfigManager.Save(config);
