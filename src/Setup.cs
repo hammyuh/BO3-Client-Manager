@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Win32;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class Setup : Page, IComponentConnector
 {
@@ -182,7 +182,7 @@ public partial class Setup : Page, IComponentConnector
 
 	private void OpenFolderButton_Click(object sender, RoutedEventArgs e)
 	{
-		string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "Standby");
+		string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "Standby");
 		Directory.CreateDirectory(path);
 		Process.Start("explorer.exe", path);
 	}

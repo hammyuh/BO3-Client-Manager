@@ -1,13 +1,13 @@
 using System;
 using System.IO;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class ExeManager
 {
-	private static string backupPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "Standby", "Backup");
+	private static string backupPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "Standby", "Backup");
 
-	private static string standbyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "Standby");
+	private static string standbyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "Standby");
 
 	private static string newExe => Path.Combine(standbyPath, "Stock BO3", "BlackOps3.exe");
 

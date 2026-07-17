@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Window x:Class="T7_Hub.UpdatePromptWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="T7 Hub Update" Width="470" Height="240" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" WindowStyle="None" Background="#00FFFFFF" AllowsTransparency="True" Opacity="0" xmlns:t7_hub="clr-namespace:T7_Hub">
+<Window x:Class="BO3ClientManager.UpdatePromptWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="BO3 Client Manager Update" Width="470" Height="240" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" WindowStyle="None" Background="#00FFFFFF" AllowsTransparency="True" Opacity="0" xmlns:t7_hub="clr-namespace:BO3ClientManager">
   <Border CornerRadius="16" Background="#EE171C27" BorderBrush="#FF4B5670" BorderThickness="1" Padding="24" MinHeight="192">
     <StackPanel>
       <TextBlock Text="Update Available" Foreground="#FFFFFFFF" FontSize="26" FontWeight="SemiBold" />

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\t7 hub.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:t7 hub.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\updatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:updatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\hashupdater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:hashupdater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -23,6 +35,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "T7 Hub",
+              "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\T7 Hub.csproj",
+              "RelativeDocumentMoniker": "T7 Hub.csproj",
+              "ToolTip": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\T7 Hub.csproj",
+              "RelativeToolTip": "T7 Hub.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-17T13:59:00.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateManager.cs",
+              "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\UpdateManager.cs",
+              "RelativeDocumentMoniker": "UpdateManager.cs",
+              "ToolTip": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\UpdateManager.cs",
+              "RelativeToolTip": "UpdateManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T13:58:51.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HashUpdater.cs",
+              "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\HashUpdater.cs",
+              "RelativeDocumentMoniker": "HashUpdater.cs",
+              "ToolTip": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\HashUpdater.cs",
+              "RelativeToolTip": "HashUpdater.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T13:57:59.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "HomePage.xaml",
               "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\HomePage.xaml",
               "RelativeDocumentMoniker": "HomePage.xaml",
@@ -34,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UpdatePromptWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\UpdatePromptWindow.xaml",
               "RelativeDocumentMoniker": "UpdatePromptWindow.xaml",

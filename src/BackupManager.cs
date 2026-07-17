@@ -5,11 +5,11 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class BackupManager
 {
-	public static string BackupRoot => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "Backups");
+	public static string BackupRoot => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "Backups");
 
 	public static void CreateRecoveryBackup(string gamePath, IEnumerable<string> files)
 	{
@@ -51,7 +51,7 @@ public static class BackupManager
 			error = "The selected backup file does not exist.";
 			return false;
 		}
-		string extractPath = Path.Combine(Path.GetTempPath(), "T7HubRestore", Guid.NewGuid().ToString("N"));
+		string extractPath = Path.Combine(Path.GetTempPath(), "BO3ClientManagerRestore", Guid.NewGuid().ToString("N"));
 		try
 		{
 			if (!IsValidBackupZip(zipPath, out error))
@@ -215,7 +215,7 @@ public static class BackupManager
 			}
 			if (!hasConfig)
 			{
-				error = "This zip does not contain a T7 Hub backup config.";
+				error = "This zip does not contain a BO3 Client Manager backup config.";
 				return false;
 			}
 			if (!hasKnownBackupFile)

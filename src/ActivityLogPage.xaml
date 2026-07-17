@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Page x:Class="T7_Hub.ActivityLogPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Activity Log" xmlns:t7_hub="clr-namespace:T7_Hub">
+<Page x:Class="BO3ClientManager.ActivityLogPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Activity Log" xmlns:t7_hub="clr-namespace:BO3ClientManager">
   <FrameworkElement.Resources>
     <ResourceDictionary>
       <Style x:Key="LogTextStyle" TargetType="{x:Type TextBlock}">

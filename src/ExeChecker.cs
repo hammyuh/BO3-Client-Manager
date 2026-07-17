@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text.Json;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class ExeChecker
 {

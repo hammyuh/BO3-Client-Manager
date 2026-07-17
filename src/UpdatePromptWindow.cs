@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media.Animation;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class UpdatePromptWindow : Window, IComponentConnector
 {

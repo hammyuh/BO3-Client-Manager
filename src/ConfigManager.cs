@@ -2,11 +2,11 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class ConfigManager
 {
-	private static readonly string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "config.json");
+	private static readonly string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "config.json");
 
 	private static readonly JsonSerializerOptions options = new JsonSerializerOptions
 	{

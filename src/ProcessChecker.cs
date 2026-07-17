@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class ProcessChecker
 {

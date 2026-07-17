@@ -7,7 +7,7 @@ using System.Windows.Markup;
 using System.Windows.Media.Animation;
 using Microsoft.Win32;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class SettingsPage : Page, IComponentConnector
 {
@@ -109,7 +109,7 @@ public partial class SettingsPage : Page, IComponentConnector
 		SaveFileDialog dialog = new SaveFileDialog
 		{
 			Filter = "ZIP archive (*.zip)|*.zip",
-			FileName = $"T7 Hub Backup {DateTime.Now:yyyy-MM-dd HH-mm}.zip"
+			FileName = $"BO3 Client Manager Backup {DateTime.Now:yyyy-MM-dd HH-mm}.zip"
 		};
 		if (dialog.ShowDialog() == true)
 		{
@@ -156,18 +156,18 @@ public partial class SettingsPage : Page, IComponentConnector
 
 	private void FactoryResetButton_Click(object sender, RoutedEventArgs e)
 	{
-		if (MessageBox.Show("This will delete all stored clients, backups, and T7 Hub configuration.\n\nYour Black Ops III installation will NOT be deleted.\n\nContinue?", "Factory Reset", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
+		if (MessageBox.Show("This will delete all stored clients, backups, and BO3 Client Manager configuration.\n\nYour Black Ops III installation will NOT be deleted.\n\nContinue?", "Factory Reset", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) != MessageBoxResult.Yes)
 		{
 			return;
 		}
-		string hubPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub");
+		string hubPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager");
 		try
 		{
 			if (Directory.Exists(hubPath))
 			{
 				Directory.Delete(hubPath, recursive: true);
 			}
-			MessageBox.Show("T7 Hub has been reset. The application will restart.", "Factory Reset Complete", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+			MessageBox.Show("BO3 Client Manager has been reset. The application will restart.", "Factory Reset Complete", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 			string? processPath = Environment.ProcessPath;
 			if (!string.IsNullOrWhiteSpace(processPath))
 			{

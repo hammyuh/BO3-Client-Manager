@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class ActivityLogger
 {
 	private static readonly object sync = new object();
 
-	private static readonly string logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "activity.log");
+	private static readonly string logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "activity.log");
 
 	public static void Log(string message)
 	{

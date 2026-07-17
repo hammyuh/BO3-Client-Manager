@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class UpdateManager
 {
@@ -75,8 +75,8 @@ public static class UpdateManager
 
 	private static async Task<UpdateInfo?> GetLatestReleaseAsync()
 	{
-		using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com/repos/hammyuh/T7-Hub/releases/latest");
-		request.Headers.UserAgent.Add(new ProductInfoHeaderValue("T7-Hub", "1.0"));
+		using HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com/repos/hammyuh/BO3-Client-Manager/releases/latest");
+		request.Headers.UserAgent.Add(new ProductInfoHeaderValue("BO3-Client-Manager", "1.0"));
 		request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
 		using HttpResponseMessage response = await client.SendAsync(request);
 		if (!response.IsSuccessStatusCode)

@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class HomePage : Page, IComponentConnector
 {

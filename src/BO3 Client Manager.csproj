@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>T7Hub</AssemblyName>
+    <AssemblyName>BO3ClientManager</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <OutputType>WinExe</OutputType>
     <UseWPF>True</UseWPF>
@@ -15,7 +15,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>
-    <RootNamespace>T7_Hub</RootNamespace>
+    <RootNamespace>BO3ClientManager</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="resources\bo3.ico" />

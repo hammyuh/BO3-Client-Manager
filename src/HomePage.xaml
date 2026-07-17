@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Page x:Class="T7_Hub.HomePage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Title="HomePage" xmlns:t7_hub="clr-namespace:T7_Hub">
+<Page x:Class="BO3ClientManager.HomePage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Title="HomePage" xmlns:t7_hub="clr-namespace:BO3ClientManager">
   <FrameworkElement.Resources>
     <ResourceDictionary>
       <SolidColorBrush x:Key="PanelBrush" Color="#E6191E2A" />
@@ -8,7 +8,7 @@
   <Grid Margin="30" ClipToBounds="False">
     <Border Width="430" Padding="35" CornerRadius="15" Background="{StaticResource PanelBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="False">
       <StackPanel>
-        <TextBlock Text="T7 Hub" Foreground="#FFFFFFFF" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" />
+        <TextBlock Text="BO3 Client Manager" Foreground="#FFFFFFFF" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" />
         <TextBlock Text="Select Profile" Foreground="#FFFFFFFF" FontSize="16" HorizontalAlignment="Center" Margin="0,25,0,10" />
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" ClipToBounds="False">
           <ComboBox Name="ProfileSelector" Width="200" Height="30" FontSize="16" Background="#222222" Foreground="#FFFFFFFF" SelectionChanged="ProfileSelector_SelectionChanged">

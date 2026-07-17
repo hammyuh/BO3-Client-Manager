@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class LauncherBackend
 {
@@ -56,7 +56,7 @@ public static class LauncherBackend
 		}
 		if (!File.Exists(executablePath))
 		{
-			throw new FileNotFoundException(Path.GetFileName(executablePath) + " is not installed in its T7 Hub Standby folder.", executablePath);
+			throw new FileNotFoundException(Path.GetFileName(executablePath) + " is not installed in its BO3 Client Manager Standby folder.", executablePath);
 		}
 		Process.Start(new ProcessStartInfo
 		{

@@ -13,14 +13,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\T7 Hub.csproj",
-      "projectName": "T7Hub",
-      "projectPath": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\T7 Hub.csproj",
+      "projectUniqueName": "C:\\Users\\Hammy\\source\\repos\\BO3-Client-Manager\\BO3 Client Manager.csproj",
+      "projectName": "BO3ClientManager",
+      "projectPath": "C:\\Users\\Hammy\\source\\repos\\BO3-Client-Manager\\BO3 Client Manager.csproj",
       "packagesPath": "C:\\Users\\Hammy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\obj\\",
+      "outputPath": "C:\\Users\\Hammy\\source\\repos\\BO3-Client-Manager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\NuGet.Config",
+        "C:\\Users\\Hammy\\source\\repos\\BO3-Client-Manager\\NuGet.Config",
         "C:\\Users\\Hammy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

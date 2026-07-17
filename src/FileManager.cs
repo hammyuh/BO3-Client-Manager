@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class FileManager
 {
-	public static readonly string standbyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "Standby");
+	public static readonly string standbyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "Standby");
 
 	public static readonly string[] Clients = new string[7] { "Stock BO3", "T7 Patch", "BOIII Community", "Ezz BOIII", "T7x", "CleanOps T7", "Old BO3 Exe" };
 
@@ -91,7 +91,7 @@ public static class FileManager
 		string[] newFiles = IsStandaloneClient(client) ? Array.Empty<string>() : (RequiredFiles.TryGetValue(client, out var selectedFiles) ? selectedFiles ?? Array.Empty<string>() : Array.Empty<string>());
 		string[] affectedFiles = oldFiles.Concat(newFiles).Append("BlackOps3.exe").Distinct<string>(StringComparer.OrdinalIgnoreCase)
 			.ToArray();
-		string transactionPath = Path.Combine(Path.GetTempPath(), "T7Hub", Guid.NewGuid().ToString("N"));
+		string transactionPath = Path.Combine(Path.GetTempPath(), "BO3ClientManager", Guid.NewGuid().ToString("N"));
 		try
 		{
 			BackupManager.CreateRecoveryBackup(gamePath, affectedFiles);

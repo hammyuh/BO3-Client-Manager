@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class App : Application
 {

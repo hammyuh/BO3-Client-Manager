@@ -5,15 +5,15 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public static class HashUpdater
 {
-	private static readonly string hashPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "hashes.json");
+	private static readonly string hashPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BO3 Client Manager", "hashes.json");
 
 	private static readonly SemaphoreSlim updateLock = new SemaphoreSlim(1, 1);
 
-	private const string HashUrl = "https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json";
+	private const string HashUrl = "https://raw.githubusercontent.com/hammyuh/BO3-Client-Manager/refs/heads/main/hashes.json";
 
 	public static bool CanProceed { get; private set; }
 
@@ -34,7 +34,7 @@ public static class HashUpdater
 			{
 				Timeout = TimeSpan.FromSeconds(5L)
 			};
-			string json = await client.GetStringAsync("https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json");
+			string json = await client.GetStringAsync("https://raw.githubusercontent.com/hammyuh/BO3-Client-Manager/refs/heads/main/hashes.json");
 			if (!IsValid(json))
 			{
 				return false;

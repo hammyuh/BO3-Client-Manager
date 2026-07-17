@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public partial class ActivityLogPage : Page, IComponentConnector
 {

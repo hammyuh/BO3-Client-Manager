@@ -4,7 +4,7 @@ using System.IO;
 using System.Security;
 using Microsoft.Win32;
 
-namespace T7_Hub;
+namespace BO3ClientManager;
 
 public class GameLocator
 {
