@@ -1,239 +1,46 @@
-﻿<Page x:Class="T7_Hub.HomePage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d"
-      Title="HomePage">
-
-    <Page.Resources>
-
-        <SolidColorBrush x:Key="PanelBrush" Color="#AA1C1C1C"/>
-
-        <Style TargetType="Button">
-
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Background" Value="#303030"/>
-            <Setter Property="BorderBrush" Value="#555555"/>
-            <Setter Property="BorderThickness" Value="1"/>
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-
-                        <Border
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="8">
-
-                            <ContentPresenter
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"/>
-
-                        </Border>
-
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Style.Triggers>
-
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Opacity" Value="0.85"/>
-                </Trigger>
-
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Opacity" Value="0.7"/>
-                </Trigger>
-
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" Value="0.4"/>
-                    <Setter Property="Cursor" Value="Arrow"/>
-                </Trigger>
-
-                <Trigger Property="IsEnabled" Value="True">
-                    <Setter Property="Opacity" Value="1"/>
-                </Trigger>
-
-            </Style.Triggers>
-
-        </Style>
-
-    </Page.Resources>
-
-
-    <Grid Margin="30">
-
-        <Border
-            Width="430"
-            Padding="35"
-            CornerRadius="15"
-            Background="{StaticResource PanelBrush}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-
-            <StackPanel>
-
-                <TextBlock
-                    Text="T7 Hub"
-                    Foreground="White"
-                    FontSize="32"
-                    FontWeight="SemiBold"
-                    HorizontalAlignment="Center"/>
-
-
-                <TextBlock
-                    Text="Select Profile"
-                    Foreground="White"
-                    FontSize="16"
-                    HorizontalAlignment="Center"
-                    Margin="0,25,0,10"/>
-
-
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center">
-
-                    <ComboBox
-                        x:Name="ProfileSelector"
-                        Width="250"
-                        Height="30"
-                        FontSize="16"
-                        Background="#222222"
-                        Foreground="Black"
-                        SelectionChanged="ProfileSelector_SelectionChanged">
-
-                        <ComboBoxItem Content="Stock BO3"
-                                      Foreground="#00690A"/>
-                        <ComboBoxItem Content="T7 Patch"
-                                      Foreground="#00690A"/>
-                        <ComboBoxItem Content="BOIII Community"
-                                      Foreground="#00690A"/>
-                        <ComboBoxItem Content="Ezz BOIII"
-                                      Foreground="#B59700"/>
-                        <ComboBoxItem Content="T7x"
-                                      Foreground="#00690A"/>
-                        <ComboBoxItem Content="CleanOps T7"
-                                      Foreground="#00690A"/>
-
-                    </ComboBox>
-
-
-                    <Button
-                        x:Name="ApplyButton"
-                        Width="100"
-                        Height="40"
-                        Margin="10,0,0,0"
-                        Content="Apply"
-                        IsEnabled="False"
-                        Click="ApplyButton_Click"/>
-
-                </StackPanel>
-
-
-                <Border
-                    x:Name="CleanOpsWarning"
-                    Visibility="Collapsed"
-                    Margin="0,15,0,0"
-                    Padding="12"
-                    CornerRadius="8"
-                    Background="#44AA0000">
-
-                    <StackPanel>
-
-                        <TextBlock
-                            Text="CleanOps T7 Disclaimer"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            FontSize="15"
-                            x:Name="DisclaimerTitle"/>
-
-                        <TextBlock
-                            Text="CleanOps T7 may take longer than usual to launch and can become unstable if interacted with too early. For the best experience, wait until the &quot;Press Enter to Start&quot; screen appears before clicking or pressing any keys."
-                            Foreground="White"
-                            FontSize="13"
-                            TextWrapping="Wrap"
-                            Margin="0,5,0,0"
-                            x:Name="DisclaimerText"/>
-
-                    </StackPanel>
-
-                </Border>
-
-
-                <StackPanel Margin="0,20,0,0">
-
-                    <TextBlock
-                        Text="BO3 Executable Status:"
-                        Foreground="White"
-                        FontSize="16"
-                        HorizontalAlignment="Center"/>
-
-                    <TextBlock
-                        x:Name="ExeStatusText"
-                        Text="Checking..."
-                        Foreground="Gray"
-                        FontSize="15"
-                        HorizontalAlignment="Center"
-                        Margin="0,5,0,10"/>
-
-
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center">
-
-                        <TextBlock
-                            Text="■ Old EXE"
-                            Foreground="Yellow"
-                            FontSize="13"
-                            Margin="5"/>
-
-                        <TextBlock
-                            Text="■ New EXE"
-                            Foreground="LimeGreen"
-                            FontSize="13"
-                            Margin="5"/>
-
-                        <TextBlock
-                            Text="■ Unknown"
-                            Foreground="Red"
-                            FontSize="13"
-                            Margin="5"/>
-
-                    </StackPanel>
-
-                </StackPanel>
-
-
-                <Button
-                    x:Name="LaunchButton"
-                    Height="65"
-                    Margin="0,25,0,0"
-                    FontSize="24"
-                    Background="#2ECC71"
-                    Click="LaunchButton_Click">
-
-                    LAUNCH
-
-                </Button>
-
-
-            </StackPanel>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="T7_Hub.HomePage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Title="HomePage" xmlns:t7_hub="clr-namespace:T7_Hub">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <SolidColorBrush x:Key="PanelBrush" Color="#E6191E2A" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="30" ClipToBounds="False">
+    <Border Width="430" Padding="35" CornerRadius="15" Background="{StaticResource PanelBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="False">
+      <StackPanel>
+        <TextBlock Text="T7 Hub" Foreground="#FFFFFFFF" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" />
+        <TextBlock Text="Select Profile" Foreground="#FFFFFFFF" FontSize="16" HorizontalAlignment="Center" Margin="0,25,0,10" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" ClipToBounds="False">
+          <ComboBox Name="ProfileSelector" Width="200" Height="30" FontSize="16" Background="#222222" Foreground="#FFFFFFFF" SelectionChanged="ProfileSelector_SelectionChanged">
+            <ComboBoxItem Tag="Stock BO3" Content="● Stock BO3" Foreground="#FF4EE58A" />
+            <ComboBoxItem Tag="T7 Patch" Content="● T7 Patch" Foreground="#FF4EE58A" />
+            <ComboBoxItem Tag="BOIII Community" Content="● BOIII Community" Foreground="#FF4EE58A" />
+            <ComboBoxItem Tag="Ezz BOIII" Content="● Ezz BOIII" Foreground="#FFFFD34E" />
+            <ComboBoxItem Tag="T7x" Content="● T7x" Foreground="#FF4EE58A" />
+            <ComboBoxItem Tag="CleanOps T7" Content="● CleanOps T7" Foreground="#FF4EE58A" />
+          </ComboBox>
+          <Button Name="ApplyButton" Style="{StaticResource ApplyButtonStyle}" Width="95" Height="40" Margin="10,0,0,0" Content="Apply" IsEnabled="False" Click="ApplyButton_Click" />
+          <Button Name="RefreshButton" Width="40" Height="40" Margin="6,0,0,0" Padding="0" Content="↻" FontSize="20" ToolTip="Refresh installed profiles" Click="RefreshButton_Click" />
+        </StackPanel>
+        <TextBlock Name="ActionStatusText" Text="Ready" Foreground="#FFB9C4DC" FontSize="13" HorizontalAlignment="Center" Margin="0,10,0,0" />
+        <Border Name="CleanOpsWarning" Visibility="Collapsed" Margin="0,15,0,0" Padding="12" CornerRadius="8" Background="#44AA0000">
+          <StackPanel>
+            <TextBlock Name="DisclaimerTitle" Text="CleanOps T7 Disclaimer" Foreground="#FFFFFFFF" FontWeight="Bold" FontSize="15" />
+            <TextBlock Name="DisclaimerText" Text="CleanOps T7 may take longer than usual to launch and can become unstable if interacted with too early. For the best experience, wait until the &quot;Press Enter to Start&quot; screen appears before clicking or pressing any keys." Foreground="#FFFFFFFF" FontSize="13" TextWrapping="Wrap" Margin="0,5,0,0" />
+          </StackPanel>
         </Border>
-
-
-        <Button
-            x:Name="SettingsButton"
-            Width="50"
-            Height="50"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Content="⚙"
-            FontSize="28"
-            Click="SettingsButton_Click"/>
-
-    </Grid>
-
+        <StackPanel Margin="0,20,0,0">
+          <TextBlock Text="BO3 Executable Status:" Foreground="#FFFFFFFF" FontSize="16" HorizontalAlignment="Center" />
+          <TextBlock Name="ExeStatusText" Text="Checking..." Foreground="#FF808080" FontSize="15" HorizontalAlignment="Center" Margin="0,5,0,10" />
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="■ Old EXE" Foreground="#FFFFFF00" FontSize="13" Margin="5" />
+            <TextBlock Text="■ New EXE" Foreground="#FF32CD32" FontSize="13" Margin="5" />
+            <TextBlock Text="■ Unknown" Foreground="#FFFF0000" FontSize="13" Margin="5" />
+          </StackPanel>
+        </StackPanel>
+        <Button Name="LaunchButton" Height="65" Margin="0,25,0,0" FontSize="24" Background="#2ECC71" Click="LaunchButton_Click">LAUNCH</Button>
+      </StackPanel>
+    </Border>
+    <Button Name="SettingsButton" Width="50" Height="50" Margin="0" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="⚙" FontFamily="Segoe UI Symbol" FontSize="22" Click="SettingsButton_Click" />
+  </Grid>
 </Page>

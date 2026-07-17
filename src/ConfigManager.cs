@@ -1,62 +1,82 @@
-﻿using System.IO;
+using System;
+using System.IO;
 using System.Text.Json;
 
-namespace T7_Hub
+namespace T7_Hub;
+
+public static class ConfigManager
 {
-    public static class ConfigManager
-    {
-        private static readonly string configPath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "T7 Hub",
-            "config.json"
-        );
+	private static readonly string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "config.json");
 
-        private static readonly JsonSerializerOptions options = new()
-        {
-            WriteIndented = true
-        };
+	private static readonly JsonSerializerOptions options = new JsonSerializerOptions
+	{
+		WriteIndented = true
+	};
 
-        public static Config Load()
-        {
-            if (!File.Exists(configPath))
-            {
-                Config config = new Config();
-                Save(config);
-                return config;
-            }
+	public static string ConfigPath => configPath;
 
-            try
-            {
-                string json = File.ReadAllText(configPath);
-                Config? config = JsonSerializer.Deserialize<Config>(json);
+	public static Config Load()
+	{
+		try
+		{
+			if (File.Exists(configPath))
+			{
+				Config? config = JsonSerializer.Deserialize<Config>(File.ReadAllText(configPath));
+				if (config != null)
+				{
+					Config config2 = config;
+					if (config2.GamePath == null)
+					{
+						config2.GamePath = "";
+					}
+					config2 = config;
+					if (config2.appliedClient == null)
+					{
+						config2.appliedClient = "Stock BO3";
+					}
+					return config;
+				}
+			}
+		}
+		catch (Exception ex) when (((ex is IOException || ex is UnauthorizedAccessException || ex is JsonException) ? 1 : 0) != 0)
+		{
+		}
+		Config config3 = new Config();
+		Save(config3);
+		return config3;
+	}
 
-                if (config != null)
-                    return config;
-            }
-            catch (JsonException)
-            {
-            }
-            catch (IOException)
-            {
-            }
-
-            Config newConfig = new Config();
-            Save(newConfig);
-            return newConfig;
-        }
-
-        public static void Save(Config config)
-        {
-            Directory.CreateDirectory(Path.GetDirectoryName(configPath)!);
-
-            string json = JsonSerializer.Serialize(config, options);
-
-            File.WriteAllText(configPath, json);
-        }
-
-        internal static void Save(bool hasCompletedSetup)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	public static bool Save(Config config)
+	{
+		string? directory = Path.GetDirectoryName(configPath);
+		if (string.IsNullOrWhiteSpace(directory))
+		{
+			return false;
+		}
+		string tempPath = configPath + ".tmp";
+		try
+		{
+			Directory.CreateDirectory(directory);
+			File.WriteAllText(tempPath, JsonSerializer.Serialize(config, options));
+			File.Move(tempPath, configPath, overwrite: true);
+			return true;
+		}
+		catch (Exception ex) when (((ex is IOException || ex is UnauthorizedAccessException) ? 1 : 0) != 0)
+		{
+			return false;
+		}
+		finally
+		{
+			try
+			{
+				if (File.Exists(tempPath))
+				{
+					File.Delete(tempPath);
+				}
+			}
+			catch (Exception ex2) when (((ex2 is IOException || ex2 is UnauthorizedAccessException) ? 1 : 0) != 0)
+			{
+			}
+		}
+	}
 }

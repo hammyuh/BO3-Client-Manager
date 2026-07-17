@@ -1,49 +1,117 @@
-﻿using System.IO;
+using System;
+using System.IO;
 using System.Net.Http;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace T7_Hub
+namespace T7_Hub;
+
+public static class HashUpdater
 {
-    public static class HashUpdater
-    {
-        private static readonly string hashPath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "T7 Hub",
-            "hashes.json"
-        );
+	private static readonly string hashPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "T7 Hub", "hashes.json");
 
-        private const string HashUrl =
-            "https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json";
+	private static readonly SemaphoreSlim updateLock = new SemaphoreSlim(1, 1);
 
+	private const string HashUrl = "https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json";
 
-        public static async Task UpdateHashes()
-        {
-            try
-            {
-                using HttpClient client = new();
+	public static bool CanProceed { get; private set; }
 
-                client.Timeout = TimeSpan.FromSeconds(5);
+	public static bool HasCachedHashesAtStartup { get; private set; }
 
-                string json = await client.GetStringAsync(HashUrl);
+	public static void PrimeSessionState()
+	{
+		HasCachedHashesAtStartup = IsValid(GetHashes());
+		CanProceed = HasCachedHashesAtStartup;
+	}
 
-                Directory.CreateDirectory(
-                    Path.GetDirectoryName(hashPath)!
-                );
+	public static async Task<bool> UpdateHashes()
+	{
+		await updateLock.WaitAsync();
+		try
+		{
+			using HttpClient client = new HttpClient
+			{
+				Timeout = TimeSpan.FromSeconds(5L)
+			};
+			string json = await client.GetStringAsync("https://raw.githubusercontent.com/hammyuh/T7-Hub/refs/heads/main/hashes.json");
+			if (!IsValid(json))
+			{
+				return false;
+			}
+			Directory.CreateDirectory(Path.GetDirectoryName(hashPath));
+			string text = hashPath + ".tmp";
+			File.WriteAllText(text, json);
+			File.Move(text, hashPath, overwrite: true);
+			CanProceed = true;
+			return true;
+		}
+		catch (Exception ex) when (((ex is HttpRequestException || ex is TaskCanceledException || ex is IOException || ex is UnauthorizedAccessException || ex is JsonException) ? 1 : 0) != 0)
+		{
+			return false;
+		}
+		finally
+		{
+			string tempPath = hashPath + ".tmp";
+			try
+			{
+				if (File.Exists(tempPath))
+				{
+					File.Delete(tempPath);
+				}
+			}
+			catch (Exception ex2) when (((ex2 is IOException || ex2 is UnauthorizedAccessException) ? 1 : 0) != 0)
+			{
+			}
+			updateLock.Release();
+		}
+	}
 
-                File.WriteAllText(hashPath, json);
-            }
-            catch
-            {
-               
-            }
-        }
+	public static string? GetHashes()
+	{
+		try
+		{
+			return File.Exists(hashPath) ? File.ReadAllText(hashPath) : null;
+		}
+		catch (Exception ex) when (((ex is IOException || ex is UnauthorizedAccessException) ? 1 : 0) != 0)
+		{
+			return null;
+		}
+	}
 
+	public static DateTime GetVersion()
+	{
+		try
+		{
+			return File.Exists(hashPath) ? File.GetLastWriteTimeUtc(hashPath) : DateTime.MinValue;
+		}
+		catch (Exception ex) when (((ex is IOException || ex is UnauthorizedAccessException) ? 1 : 0) != 0)
+		{
+			return DateTime.MinValue;
+		}
+	}
 
-        public static string? GetHashes()
-        {
-            if (!File.Exists(hashPath))
-                return null;
-
-            return File.ReadAllText(hashPath);
-        }
-    }
+	public static bool IsValid(string? json)
+	{
+		if (string.IsNullOrWhiteSpace(json))
+		{
+			return false;
+		}
+		try
+		{
+			using JsonDocument document = JsonDocument.Parse(json);
+			if (!document.RootElement.TryGetProperty("blackops3", out var blackOps3))
+			{
+				return false;
+			}
+			JsonElement oldHashes;
+			JsonElement newHashes;
+			JsonElement clients;
+			return blackOps3.TryGetProperty("old", out oldHashes) && oldHashes.ValueKind == JsonValueKind.Array && blackOps3.TryGetProperty("new", out newHashes) && newHashes.ValueKind == JsonValueKind.Array && document.RootElement.TryGetProperty("clients", out clients) && clients.ValueKind == JsonValueKind.Object;
+		}
+		catch (JsonException)
+		{
+			return false;
+		}
+	}
 }

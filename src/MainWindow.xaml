@@ -1,28 +1,12 @@
-﻿<Window x:Class="T7_Hub.MainWindow"
-        Icon="Resources\bo3.ico"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:T7_Hub"
-        mc:Ignorable="d"
-        Title="T7 Hub"
-        Height="705"
-        Width="900"
-        WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
-
-    <Window.Background>
-        <ImageBrush ImageSource="/Resources/splash.png"
-                    Stretch="UniformToFill"/>
-    </Window.Background>
-
-    <Grid>
-        <Grid Background="#66000000"/>
-
-        <Frame x:Name="MainFrame"
-               NavigationUIVisibility="Hidden"/>
-
-    </Grid>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="T7_Hub.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:T7_Hub" Icon="/resources/bo3.ico" Title="T7 Hub" Height="705" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+  <Control.Background>
+    <ImageBrush ImageSource="/resources/splash.png" Stretch="UniformToFill" />
+  </Control.Background>
+  <Grid>
+    <Grid Background="#66000000" />
+    <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
+    <Border Name="ModalOverlay" Background="#AA000000" Visibility="Collapsed" IsHitTestVisible="True" Opacity="0" />
+    <TextBlock Name="VersionLabel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="18,0,0,12" Foreground="#A9D8E0F2" FontSize="12" FontWeight="SemiBold" Text="Release v1.2" />
+  </Grid>
 </Window>

@@ -1,0 +1,29 @@
+C:\Users\Hammy\source\repos\T7 Hub\bin\Release\net10.0-windows\T7Hub.exe
+C:\Users\Hammy\source\repos\T7 Hub\bin\Release\net10.0-windows\T7Hub.deps.json
+C:\Users\Hammy\source\repos\T7 Hub\bin\Release\net10.0-windows\T7Hub.runtimeconfig.json
+C:\Users\Hammy\source\repos\T7 Hub\bin\Release\net10.0-windows\T7Hub.dll
+C:\Users\Hammy\source\repos\T7 Hub\bin\Release\net10.0-windows\T7Hub.pdb
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\ActivityLogPage.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\HomePage.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\MainWindow.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\SettingsPage.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\Setup.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\UpdatePromptWindow.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\App.g.cs
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7Hub_MarkupCompile.cache
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7Hub_MarkupCompile.lref
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\App.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\ActivityLogPage.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\HomePage.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\MainWindow.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\SettingsPage.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\Setup.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\UpdatePromptWindow.baml
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7Hub.g.resources
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7 Hub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7 Hub.csproj.CoreCompileInputs.cache
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7Hub.dll
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\refint\T7Hub.dll
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7Hub.pdb
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\T7 Hub.genruntimeconfig.cache
+C:\Users\Hammy\source\repos\T7 Hub\obj\Release\net10.0-windows\ref\T7Hub.dll

@@ -1,188 +1,57 @@
-﻿<Page x:Class="T7_Hub.SettingsPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:T7_Hub"
-      mc:Ignorable="d"
-      d:DesignHeight="450"
-      d:DesignWidth="800"
-      Title="SettingsPage">
-
-    <Page.Resources>
-
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="38"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Padding" Value="16,0"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#303030"/>
-            <Setter Property="BorderBrush" Value="#505050"/>
-
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#3E6BFF"/>
-                </Trigger>
-
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Opacity" Value="0.85"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="TextBox">
-            <Setter Property="Height" Value="38"/>
-            <Setter Property="Padding" Value="10,0"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
-
-    </Page.Resources>
-
-
-    <Grid Margin="30">
-
-        <Border
-            Width="650"
-            Padding="30"
-            CornerRadius="14"
-            Background="#AA1C1C1C"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-
-            <Grid>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-
-                <TextBlock
-                    Text="Settings"
-                    FontSize="30"
-                    FontWeight="SemiBold"
-                    Foreground="White"/>
-
-
-                <Grid Grid.Row="2">
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <TextBlock
-                        Grid.Column="0"
-                        Text="BO3 Folder"
-                        VerticalAlignment="Center"
-                        FontSize="16"
-                        Foreground="White"
-                        Margin="0,0,15,0"/>
-
-
-                    <TextBox
-                        x:Name="BO3PathTB"
-                        Grid.Column="1"
-                        Margin="0,0,10,0"
-                        TextChanged="BO3PathTB_TextChanged"/>
-
-
-                    <Button
-                        x:Name="BrowseButton"
-                        Grid.Column="2"
-                        Width="95"
-                        Content="Browse"
-                        Click="BrowseButton_Click"/>
-
-
-                    <Button
-                        x:Name="LocateButton"
-                        Grid.Column="3"
-                        Width="110"
-                        Content="Auto Locate"
-                        Click="LocateButton_Click"/>
-
-                </Grid>
-
-
-                <Border
-                    Grid.Row="3"
-                    Margin="0,20,0,10"
-                    Padding="15"
-                    CornerRadius="8"
-                    Background="#331A0000">
-
-                    <StackPanel>
-
-                        <TextBlock
-                            Text="Factory Reset"
-                            Foreground="White"
-                            FontSize="18"
-                            FontWeight="SemiBold"/>
-
-
-                        <TextBlock
-                            Text="This will delete all clients stored in Standby and reset T7 Hub configuration. Your Black Ops III installation will not be deleted."
-                            Foreground="Gray"
-                            TextWrapping="Wrap"
-                            Margin="0,5,0,10"/>
-
-
-                        <Button
-                            x:Name="FactoryResetButton"
-                            Width="130"
-                            HorizontalAlignment="Left"
-                            Content="Factory Reset"
-                            Click="FactoryResetButton_Click"/>
-
-                    </StackPanel>
-
-                </Border>
-
-
-                <StackPanel
-                    Grid.Row="5"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right">
-
-                    <Button
-                        x:Name="OKButton"
-                        Width="90"
-                        Content="OK"
-                        Click="OKButton_Click"/>
-
-
-                    <Button
-                        x:Name="CancelButton"
-                        Width="90"
-                        Content="Cancel"
-                        Click="CancelButton_Click"/>
-
-
-                    <Button
-                        x:Name="ApplyButton"
-                        Width="90"
-                        Content="Apply"
-                        IsEnabled="False"
-                        Click="ApplyButton_Click"/>
-
-                </StackPanel>
-
-
-            </Grid>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="T7_Hub.SettingsPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:T7_Hub" Title="SettingsPage">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}">
+        <Setter Property="Height" Value="38" />
+        <Setter Property="Padding" Value="10,0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="30">
+    <Border Width="650" Padding="30" CornerRadius="14" Background="#AA1C1C1C" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="25" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Settings" FontSize="30" FontWeight="SemiBold" Foreground="#FFFFFFFF" />
+        <Grid Row="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0" Text="BO3 Folder" VerticalAlignment="Center" FontSize="16" Foreground="#FFFFFFFF" Margin="0,0,15,0" />
+          <TextBox Name="BO3PathTB" Grid.Column="1" Margin="0,0,10,0" TextChanged="BO3PathTB_TextChanged" />
+          <Button Name="BrowseButton" Grid.Column="2" Width="95" Content="Browse" Click="BrowseButton_Click" />
+          <Button Name="LocateButton" Grid.Column="3" Width="110" Content="Auto Locate" Click="LocateButton_Click" />
+        </Grid>
+        <Border Grid.Row="3" Margin="0,20,0,10" Padding="15" CornerRadius="8" Background="#331A0000">
+          <StackPanel>
+            <TextBlock Text="Factory Reset" Foreground="#FFFFFFFF" FontSize="18" FontWeight="SemiBold" />
+            <TextBlock Text="This will delete all clients stored in Standby and reset T7 Hub configuration. Your Black Ops III installation will not be deleted." Foreground="#FF808080" TextWrapping="Wrap" Margin="0,5,0,10" />
+            <Button Name="FactoryResetButton" Width="130" HorizontalAlignment="Left" Content="Factory Reset" Click="FactoryResetButton_Click" />
+          </StackPanel>
         </Border>
-
-    </Grid>
-
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left">
+          <Button Width="145" Content="Restore Backup" Click="RestoreBackupButton_Click" />
+          <Button Width="125" Content="Activity Log" Click="ActivityLogButton_Click" />
+          <Button Width="135" Content="Export Backup" Click="ExportBackupButton_Click" />
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+          <Button Name="OKButton" Width="90" Content="OK" Click="OKButton_Click" />
+          <Button Name="CancelButton" Width="90" Content="Cancel" Click="CancelButton_Click" />
+          <Button Name="ApplyButton" Width="90" Content="Apply" IsEnabled="False" Click="ApplyButton_Click" />
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
 </Page>

@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|c:\\users\\hammy\\source\\repos\\t7 hub\\updatepromptwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBE9EA-3FE7-9742-5E53-A6F0FF0F68C0}|T7 Hub.csproj|solutionrelative:updatepromptwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\HomePage.xaml",
+              "RelativeDocumentMoniker": "HomePage.xaml",
+              "ToolTip": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\HomePage.xaml",
+              "RelativeToolTip": "HomePage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-17T13:24:58.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdatePromptWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\UpdatePromptWindow.xaml",
+              "RelativeDocumentMoniker": "UpdatePromptWindow.xaml",
+              "ToolTip": "C:\\Users\\Hammy\\source\\repos\\T7 Hub\\UpdatePromptWindow.xaml",
+              "RelativeToolTip": "UpdatePromptWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-17T13:23:07.738Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
